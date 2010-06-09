@@ -59,7 +59,8 @@ class linkfy {
 	{
 		// Finds all http/https/ftp/ftps links that are not part of an existing html anchor
 		if (preg_match_all('~\b(?<!href="|">)(?:ht|f)tps?://\S+(?:/|\b)~i', $text, $matches))
-		{
+		{	
+			//checking for URLs
 			foreach ($matches[0] as $match)
 			{
 				$clickable_link = "<a href=\" $match \"> $match </a>";
@@ -67,8 +68,16 @@ class linkfy {
 				
 			}
 		
-		} else if( preg_match_all() ) {
+		} 
+		
+		//checking for emails
+		if( preg_match_all('/[a-z0-9]+([\\+_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}/i',
+			$text, $matches) ) {
 			
+			foreach( $matches[0] as $match ) {
+				$clickable_link = "<a href=\"mailto:$match\"> $match </a>";
+				$text = str_replace($match, $clickable_link, $text );
+			}
 		}
 		
 		return $text;
