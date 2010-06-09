@@ -1,5 +1,5 @@
 === About ===
-name: Actionable
+name: Linkfy
 website: http://www.ushahidi.com
 description: Converts unclickable links in reports description into clickable.
 version: 0.1
