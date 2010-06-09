@@ -63,11 +63,15 @@ class linkfy {
 			foreach ($matches[0] as $match)
 			{
 				$clickable_link = "<a href=\" $match \"> $match </a>";
+				$text = str_replace($match, $clickable_link, $text);
 				
 			}
+		
+		} else if( preg_match_all() ) {
+			
 		}
 		
-		return $clickable_link;
+		return $text;
 	}
 	
 }
