@@ -6,7 +6,7 @@ version: 0.1
 requires: 2.0
 tested up to: 2.0
 author: Henry Addo
-author website: http://addhen.org/blog
+author website: http://www.addhen.org/blog
 	
 == Description ==
 Converts unclickable links in reports description into clickable.
